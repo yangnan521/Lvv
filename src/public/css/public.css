@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul ol {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+html body {
+  width: 100%;
+  height: 100%; }
+
+header {
+  width: 100%;
+  height: 50px;
+  background: #150d0f;
+  position: relative; }
+  header .hed {
+    position: relative;
+    display: none; }
+    header .hed .Img {
+      position: absolute;
+      left: 50%;
+      top: 50%; }
+    header .hed .ulss {
+      display: none;
+      position: absolute;
+      background: rgba(100, 100, 100, 0.4);
+      width: 400px;
+      text-align: center;
+      top: 50px;
+      left: -190px; }
+      header .hed .ulss li a {
+        display: block;
+        color: black;
+        font-size: 16px;
+        line-height: 50px;
+        margin-right: 20px;
+        box-sizing: border-box; }
+        header .hed .ulss li a:hover {
+          color: white; }
+  header .Heds {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between; }
+    header .Heds .Hlink {
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      box-sizing: border-box;
+      padding-right: 50px;
+      line-height: 50px; }
+    header .Heds .uls {
+      display: flex;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding-right: 50px;
+      list-style: none; }
+      header .Heds .uls li {
+        width: 35%;
+        text-align: center; }
+        header .Heds .uls li a {
+          color: #a58e85;
+          font-size: 16px;
+          line-height: 50px;
+          margin-right: 20px;
+          box-sizing: border-box; }
+          header .Heds .uls li a:hover {
+            color: white; }
+    header .Heds nav {
+      color: #a58e85;
+      font-size: 20px;
+      line-height: 50px;
+      font-weight: 100; }
+      header .Heds nav a {
+        color: #a58e85;
+        margin-right: 10px;
+        box-sizing: border-box; }
+        header .Heds nav a:hover {
+          color: white; }
+      header .Heds nav span {
+        color: #a58e85; }
+        header .Heds nav span:hover {
+          color: white; }
+
+footer {
+  width: 100%; }
+  footer .f-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #221616; }
+    footer .f-top a {
+      color: #8a613a;
+      line-height: 30px;
+      font-size: 12px;
+      padding: 0 10px; }
+  footer .f-bottom {
+    width: 100%;
+    background: #150d0f;
+    margin: 0 auto; }
+    footer .f-bottom a {
+      color: #71635e;
+      margin: 0 20px;
+      font-size: 12px; }
+      footer .f-bottom a:hover {
+        color: white; }
+
+@media screen and (max-width: 750px) {
+  .Heds {
+    opacity: 0; }
+  header .hed {
+    display: block; }
+    header .hed .Img {
+      display: block; } }
