@@ -1,0 +1,11 @@
+.goods {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 5%; }
+  .goods li {
+    border: 1px solid #eee;
+    margin: 10px 10px; }
+  .goods a {
+    color: black; }

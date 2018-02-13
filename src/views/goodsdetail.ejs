@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/goodsdetail.css"/>
+	</head>
+	<body>
+<!-- header -->
+<header>
+	<div class="hed">
+		<div class="Img">
+			<img id="myimgs" src="../img/nav.jpg"/>
+			<ul class="ulss">
+				<li><a href="#">LV</a></li>
+				<li class="liclass"><a href="#">路易威登</a></li>
+				<li><a href="#">女士</a></li>
+				<li><a href="#" >男士</a></li>
+				<li><a href="#">专卖店</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="Heds">
+		<a class="Hlink" href="#">LOUIS VUITTON</a>
+		<ul class="uls">
+			<li><a href="#">LV NOW</a></li>
+			<li class="liclass"><a href="#">路易威登世界</a></li>
+			<li><a href="#">女士</a></li>
+			<li><a href="#" id="manshi">男士</a></li>
+			<li><a href="#">专卖店</a></li>
+		</ul>
+
+		<nav>
+			<a href="#"><i class="iconfont icon-search"></i></a>
+			<a href="#"><i class="iconfont icon-gouwudaiweikong"></i></a>
+			<a href="#"><i class="iconfont icon-shoucang"></i></a>
+			<a href="#"><i class="iconfont icon-yonghu"></i></a>
+			<a href="#"><i class="iconfont icon-guanbi"></i></a>
+			<span>400 6588 555</span>
+		</nav>
+	</div>
+</header>
+    <h1><%= title %></h1>
+    <!-- <div>
+        <p>商品编号：<%=goodsdetail.goodsid%></p>
+        <p>商品名称：<%=goodsdetail.goodsname%></p>
+        <p>商品价格：<%=goodsdetail.goodsprice%></p>
+        <p>商品数量：<%=goodsdetail.goodscount%></p>
+        <p>商品规格：<%=goodsdetail.goodsrule%></p>
+        <p>商品图片：<img src="<%=goodsdetail.goodspic%>" style="width:200px;height: 200px;" </p>
+    </div>
+    <hr> -->
+
+<div class="conB">
+    <div class="bigMro">
+            <div id="box">
+            <div class="simg">
+                <img id="imgs1" class="imgs" src="<%=goodsdetail.goodspic%>"/>
+                <span class="move"></span>
+                <span class="shade"></span>
+               
+            </div>
+             <ul id="bottomBox">
+                    <li><img id="imgs1"  class="active" src="<%=goodsdetail.goodspic%>"/></li>
+                    <li><img id="imgs2"  src="<%=goodsdetail.goodspic%>"/></li>
+                    <li><img id="imgs3"  src="<%=goodsdetail.goodspic%>"/></li>
+                </ul>
+            <div class="bimg"><img id="middle" src="<%=goodsdetail.goodspic%>"/></div>
+        </div>
+        </div>
+        <div class="goodsinfo">
+                            <h2 class="list_title">路易威登世界</h2>
+                            <p><%=goodsdetail.goodsname%></p>
+                            <span style="font-weight:700;font-size:26px">￥<%=goodsdetail.goodsprice%></span>
+                            <a class="goodA" href="#">商品详情</a>
+                            <div class="connect"><%=goodsdetail.goodscount%></div>
+                           
+        
+                            <div class="goodsall">
+                            <a class="goodB" href="#"><b>立即购买</b></a>
+                             <a class="goodC" href="#">加入购物袋</a></div>
+                             <ul class="goodsul">
+                                 <li><a href="#" class="">免配送费</a></li>
+                                 <li><a href="#" class="">LV艺术包装</a></li>
+                                 <li><a href="#" class="">旅行装及小样礼赠</a></li>
+                                 <li><a href="#" class="">查询送达时间</a></li>
+                             </ul>
+                       
+        </div>
+    </div>
+    <!--footer-->
+<footer>
+        <div class="f-top">
+            <a href="#">路易威登</a>
+            <a href="#">您可能感兴趣的内容  |  ^</a>
+        </div>
+        <div class="f-bottom">
+            <a href="#">其他语言</a>
+            <a href="#">订阅电子报</a>
+            <a href="#">联系我们</a>
+            <a href="#">应用程序</a>
+            <a href="#">关注我们</a>
+            <a href="#">法律声明和隐私条款</a>
+            <a href="#">沪ICP备09069024</a>
+            <a href="#">电子营业执照</a>
+            <a href="#">出版物经营许可证</a>
+            <a href="#">沪公网安备</a>
+            <a href="#">人力资源</a>
+            <a href="#">网站地图</a>
+        </div>
+        
+    </footer>
+  </body>
+</html>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/bigMro.js"></script>
+
+
+
+

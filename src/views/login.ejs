@@ -57,9 +57,9 @@
 		<h3>已有账户请登录</h3>
 		<form action="../login" method="post">
 			
-			用户名* &nbsp;&nbsp;&nbsp;&nbsp; <input id="user" name="username" type="text" placeholder="用户名" /> <span id="mesN"></span><br/>
+			用户名* &nbsp;&nbsp;&nbsp;&nbsp; <input name="username" type="text" placeholder="用户名" /> <span id="mesN"></span><br/>
 			
-			密 码*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="pass" name="userpass" type="password" placeholder="密码" /> <span id="mesP"></span><br/>
+			密 码*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="userpass" type="password" placeholder="密码" /> <span id="mesP"></span><br/>
 					<a href="#">忘记密码？</a>	<br/>
 					<input type="submit" id="log" name="" value="登录"/>
 		</form>
@@ -104,40 +104,5 @@
 	</body>
 </html>
 <script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-
 <script src="../js/reg.js"></script>
-<script>
-	$("#user").blur(function(){
-		if($("#user").val()==""){
-			$("#mesN").html("亲，用户名不能为空！");
-		}
 
-		 var regUser = /^[a-zA-Z]\w{5,19}$/; 
-		var user = $("#user").val();
-		if(!regUser.test(user)){
-			$("#mesN").html("用户名输入有误！");
- 			$("#mesN").css({"color":"red"});
-		}else{
-			$("#mesN").html("√");
-			$("#mesN").css({"color":"green"});
-		}
-		
-	});
-
-	$("#pass").blur(function(){
-		if($("#pass").val()==""){
-		$("#mesP").html("亲，密码不能为空！");
-			$("#mesP").css({"color":"red","font-size":"12px","padding-left":"160px"});
-	}
-		 var regPass =/^[a-zA-Z]\w{5,19}$/; 
-		var userpass = $("#pass").val();
-		if(!regPass.test(userpass)){
-			$("#mesP").html("亲，密码输入有误！");
- 			$("#mesP").css({"color":"red"});
-		}else{
-			$("#mesP").html("√");
-			$("#mesP").css({"color":"green"});
-		}
-	});
-
-</script>

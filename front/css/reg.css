@@ -49,6 +49,9 @@
         height: 40px;
         outline: none;
         border: 1px solid #dbd9cf; }
+      .sec .s-L form #mesMa {
+        width: 70px;
+        margin-left: 10%; }
       .sec .s-L form #checkMa {
         width: 100px;
         height: 40px;

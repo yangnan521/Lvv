@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>注册</title>
-		<!-- <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/> -->
-		<link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/reg.css"/>
 		
@@ -59,14 +59,13 @@
 				<option selected>小姐</option>
 				<option>先生</option>
 			</select><br/>
-			用户名* &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="user" name="username"/> <span id="mesN"></span><br/>
+			用户名* &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="userid" name="username"/> <span id="mesN"></span><br/>
 			
-			密 码*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="pass" name="userpass" type="password" /> <span id="mesP"></span><br/>
+			密 码*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="userpass" type="password" /> <span id="mesP"></span><br/>
 			
-			<p>验证码：&nbsp;&nbsp;&nbsp;&nbsp;<span id="checkMa">获取验证码</span> <input id="mesMa" type="text" /> 
-				 <span id="spancheck"></span></p>
+			<p>验证码：&nbsp;&nbsp;&nbsp;&nbsp;<span id="checkMa">获取验证码</span> <input id="mesMa" type="text" /></p>
 		
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交"/> <%=errmsg%>
 		</form>
 	</div>
 	<div class="s-R">
@@ -84,7 +83,7 @@
 			</ul>
 			
 		</div>
-		<h1> > 通过EMAIL联络我们</h1>
+		<h1> 通过EMAIL联络我们</h1>
 	</div>
 </div>
 
@@ -113,57 +112,25 @@
 </footer>
 	</body>
 </html>
-<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 
 <script src="../js/reg.js"></script>
-<script>
-
-$("#user").blur(function(){
-		 var regUser =/^[a-zA-Z]\w{5,19}$/; 
-		var users = $("#pass").val();
-		if(!regUser.test(users)){
-			$("#mesN").html("用户名必须包含数字字母至少6位！");
- 			$("#mesN").css({"color":"red"});
-		}else{
-			$("#mesN").html("√");
-			$("#mesN").css({"color":"green"});
-		}
-	});
-
-$("#pass").blur(function(){
-		 var regPass =/^[a-zA-Z]\w{5,19}$/; 
-		var userpass = $("#pass").val();
-		if(!regPass.test(userpass)){
-			$("#mesP").html("密码输入必须包含数字字母至少6位！");
- 			$("#mesP").css({"color":"red"});
-		}else{
-			$("#mesP").html("√");
-			$("#mesP").css({"color":"green"});
-		}
-	});
-	document.getElementById("checkMa").onclick = function(){
-		var arr=["a","b","c","d","A","B","D","1","2","3","0"];
-		var str="";
-		for(var i=0;i<4;i++){
-			//随机产生合法的下标
-			var index = parseInt(Math.random()*arr.length);
-			//根据下标从数组中取出对应的字符，拼接到str上。
-			str+=arr[index];
-		}
-		document.getElementById("checkMa").innerHTML=str;
-	}
-
-	document.getElementById("mesMa").onblur = function(){
-	    var regShow =  document.getElementById("mesMa").value;  
-		var usercheck = document.getElementById("checkMa").innerHTML;
-		if(!(regShow==usercheck)){
-			// alert(true);
-			document.getElementById("spancheck").innerHTML="验证码输入错误";
-			$("#spancheck").css({"color":"red"});
-			return;
-		}else{
-			document.getElementById("spancheck").innerHTML="√";
-			$("#spancheck").css({"color":"green"});
-		}
-	}	
+<script type="text/javascript" src="javascripts/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("#userid").blur(function () {
+        $.ajax({
+            url:"usercheck",
+            data:{
+                "username":$("#userid").val()
+            },
+            success:function (data) {
+                if(data==1){//data是1：表示存在，0：表示不存在
+                    $("#mesN").html("亲，该用户名已被使用");
+                }else{
+                    $("#mesN").html("亲，该用户名没有人用，赶紧注册吧！");
+                }
+            }
+        });
+    });
+})
 </script>
